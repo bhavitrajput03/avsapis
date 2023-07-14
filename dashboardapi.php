@@ -20,9 +20,10 @@ function getdata(){
 	// $vecle_name=$_GET['vechile_type'];
 	// $vecle_number=$_POST['vechile_number'];
 	$date=$_POST['date'];
-	$empId = $_POST['employeeID'];
+	$busId = $_POST['businessID'];
     
-$query= mysqli_query($conn,"SELECT vechile_number , customer_name , mobile_number ,feedback,vechile_name,v.date,e.businessID FROM customerdata c inner JOIN visiters v on v.cid = c.cid inner join vechile_type b on b.vechile_id=c.vechile_id inner join employees e on e.employeeID=v.employeeID  WHERE v.date like '$date%' AND v.employeeID='$empId'");
+$query= mysqli_query($conn,"SELECT vechile_number , customer_name , mobile_number ,feedback,vechile_name,v.date,e.businessID FROM customerdata c inner JOIN visiters v on v.cid = c.cid inner join vechile_type b on b.vechile_id=c.vechile_id inner join employees e on e.employeeID=v.employeeID  WHERE v.date like '$date%' AND v.employeeID='$busId'");
+echo "SELECT vechile_number , customer_name , mobile_number ,feedback,vechile_name,v.date,e.businessID FROM customerdata c inner JOIN visiters v on v.cid = c.cid inner join vechile_type b on b.vechile_id=c.vechile_id inner join employees e on e.employeeID=v.employeeID  WHERE v.date like '$date%' AND v.businessID='$busId'";
  
 	while ($row=mysqli_fetch_assoc($query)) {
 	  

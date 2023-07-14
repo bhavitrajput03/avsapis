@@ -17,7 +17,6 @@ switch ($request) {
 function getdata(){
 	global $conn;
 
-	$date=$_POST['date'];
 	$busId = $_POST['businessID'];
     
 $query= mysqli_query($conn,"SELECT employeeID , employeeName , employeeNumber ,businessID ,status FROM employees emp WHERE emp.businessID='$busId'");
